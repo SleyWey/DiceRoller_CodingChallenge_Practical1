@@ -21,7 +21,9 @@ class MainActivity : AppCompatActivity() {
         diceImage1 = findViewById(R.id.dice_image1)
         diceImage2 = findViewById(R.id.dice_image2)
         val rollButton: Button = findViewById(R.id.roll_button)
+        val resetButton: Button = findViewById(R.id.reset_button)
         rollButton.setOnClickListener { rollDice() }
+        resetButton.setOnClickListener { resetDice() }
     }
 
     private fun rollDice() {
@@ -43,6 +45,13 @@ class MainActivity : AppCompatActivity() {
         diceImage.setImageResource(getRandomDiceImage())
         diceImage1.setImageResource(getRandomDiceImage())
         diceImage2.setImageResource(getRandomDiceImage())
+    }
+
+    private fun resetDice(){
+        diceImage.setImageResource(R.drawable.empty_dice);
+        diceImage1.setImageResource(R.drawable.empty_dice);
+        diceImage2.setImageResource(R.drawable.empty_dice);
+
     }
 
     private fun getRandomDiceImage():Int {
